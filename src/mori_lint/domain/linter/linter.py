@@ -17,6 +17,7 @@ logger = logging.getLogger("__mori__")
 
 
 class MoriLinter:
+    # ToDo: убрать этот класс, всё делаем через сервисы и юзкейсы
     def __init__(
         self,
         message_length: int = 79,
