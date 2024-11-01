@@ -10,4 +10,7 @@ class MessageTooShortError(MoriLintException):
 
     @property
     def message(self) -> str:
-        return super().message % f"Длина сообщения `{self.msg_length}` Минимальная длина `{self.permissible_length}`"
+        return (
+                super().message %
+                f"Длина сообщения(слов) {self.msg_length} | Минимально-допустимая длина {self.permissible_length}"
+        )

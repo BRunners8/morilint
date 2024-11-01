@@ -8,8 +8,7 @@ def configure_logger(log_level=logging.DEBUG) -> None:
     console_handler = logging.StreamHandler()
     console_handler.setLevel(log_level)
 
-    # formatter = logging.Formatter("%(asctime)s [%(levelname)s]: %(message)s")
-    formatter = logging.Formatter("[%(levelname)s]: %(message)s")
+    formatter = logging.Formatter("%(asctime)s [%(levelname)s]: %(message)s")
     console_handler.setFormatter(formatter)
 
     logger.addHandler(console_handler)

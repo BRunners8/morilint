@@ -9,4 +9,6 @@ class MessageRequiredKeywordMissingError(MoriLintException):
 
     @property
     def message(self) -> str:
-        return super().message % f"В сообщении НЕ содержатся обязательные слова/выражения: {self.keywords}"
+        return super().message % f"В сообщении НЕ содержатся обязательные слова/выражения: {
+            ', '.join(self.keywords)
+        }"

@@ -10,8 +10,6 @@ from src.mori_lint.domain.use_cases import (
     ValidateRequiredKeywordsCase,
     MoriLintCase
 )
-from src.mori_lint.infrastructure.lint_config.config import LintConfig
-
 
 T = TypeVar('T', bound=MoriLintCase)
 
@@ -20,7 +18,7 @@ class MoriLintService:
     def __init__(self, lint_config: ILintConfig) -> None:
         self.lint_config: ILintConfig = lint_config
 
-    def get_lint_report(self, message: str) -> LintReportDTO:
+    def lint(self, message: str) -> LintReportDTO:
         """
         Формирует список проверок, на основе конфигурации линтера.
         Передаёт проверки с заданными аргументами на выполнение и
@@ -66,7 +64,6 @@ class MoriLintService:
                 failed_checks_detail.append(e.message)
             else:
                 success += 1
-
         return LintReportDTO(
             total_checks=total,
             success=success,
@@ -78,17 +75,10 @@ class MoriLintService:
     def clear_message(message: str) -> str:
         """
         Принимает на вход сообщение, убирает из него все знаки препинания,
-        лишние пробелы и возвращает очищеную строку.
+        лишние пробелы и возвращает очищенную строку.
         :param message: Исходное сообщение
         :return: строка без знаков препинания и лишних пробелов
         """
         return message.translate(
-            str.maketrans('', '', string.punctuation)
+            str.maketrans("", "", string.punctuation)
         ).replace("  ", " ")
-
-
-s = MoriLintService(lint_config=LintConfig())
-
-print(s.get_lint_report(
-    "Тест Дениса Максимова милая ❤️" * 30
-))

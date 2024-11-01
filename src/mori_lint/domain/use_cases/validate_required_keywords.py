@@ -10,7 +10,7 @@ class ValidateRequiredKeywordsCase(MoriLintCase):
     обязательное ключевое слово
     """
 
-    def __call__(self, clean_message: str) -> bool:
+    def __call__(self, clean_message: str) -> None:
         pattern = re.compile(
             r'\b(' + '|'.join(map(re.escape, self.lint_config.req_keywords)) + r')\b',
             re.IGNORECASE
