@@ -1,9 +1,9 @@
 import logging
 
-from src.mori_lint.domain.dto import LintReportDTO
-from src.mori_lint.domain.services.mori_lint_service import MoriLintService
-from src.mori_lint.infrastructure.lint_config.config import LintConfig
-from src.mori_lint.presentation.responses.lint_response import LintResponse
+from ....domain.dto import LintReportDTO
+from ....domain.services.mori_lint_service import MoriLintService
+from ....infrastructure.lint_config.config import LintConfig
+from ....presentation.responses.lint_response import LintResponse
 
 logger = logging.getLogger("__mori__")
 

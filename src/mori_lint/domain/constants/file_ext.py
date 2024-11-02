@@ -1,0 +1,1 @@
+MORIFILE = "*.mori"

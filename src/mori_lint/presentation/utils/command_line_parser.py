@@ -1,6 +1,6 @@
 import argparse
 
-from src.mori_lint.infrastructure.lint_config.config import LintConfig
+from ...infrastructure.lint_config.config import LintConfig
 
 
 class CommandLineParser:
@@ -23,17 +23,15 @@ class CommandLineParser:
             help="Максимальная длина сообщения"
         )
         parser.add_argument(
-
             '--min_hearts_count',
             type=int, default=1,
             help="Минимальное количество сердечек"
         )
 
-        # Для кортежей и множеств используем custom типы
         parser.add_argument(
             '--req_keywords',
-            type=lambda s: tuple(s.split(',')),
-            default=(),
+            type=lambda s: list(s.split(',')),
+            default=list(),
             help="Список обязательных ключевых слов, разделённых запятыми"
         )
         parser.add_argument(
@@ -92,7 +90,7 @@ class CommandLineParser:
         return parser.parse_args()
 
     @classmethod
-    def get_config(cls) -> (str, LintConfig):
+    def get_config(cls) -> tuple[str, LintConfig]:
         config: LintConfig = LintConfig()
         command_line_args: argparse.Namespace = cls.read_line_args()
         if command_line_args.message_length is not None:

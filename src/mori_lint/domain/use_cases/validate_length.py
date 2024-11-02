@@ -1,5 +1,5 @@
-from src.mori_lint.domain.exceptions import MessageTooShortError
-from src.mori_lint.domain.use_cases.base import MoriLintCase
+from ..exceptions import MessageTooShortError
+from ..use_cases.base import MoriLintCase
 
 
 class ValidateLengthCase(MoriLintCase):

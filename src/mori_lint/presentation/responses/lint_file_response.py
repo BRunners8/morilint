@@ -1,6 +1,6 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
-from src.mori_lint.presentation.responses.lint_response import LintResponse
+from ..responses.lint_response import LintResponse
 
 
 @dataclass(frozen=True)

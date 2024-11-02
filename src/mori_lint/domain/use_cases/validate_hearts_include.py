@@ -1,7 +1,7 @@
 import re
 
-from src.mori_lint.domain.exceptions import MessageHearthMissingError
-from src.mori_lint.domain.use_cases.base import MoriLintCase
+from ..exceptions import MessageHearthMissingError
+from ..use_cases.base import MoriLintCase
 
 
 class ValidateHeartsIncludeCase(MoriLintCase):

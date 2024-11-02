@@ -1,7 +1,7 @@
 import re
 
-from src.mori_lint.domain.exceptions import MessageRequiredKeywordMissingError
-from src.mori_lint.domain.use_cases.base import MoriLintCase
+from ..exceptions import MessageRequiredKeywordMissingError
+from ..use_cases.base import MoriLintCase
 
 
 class ValidateRequiredKeywordsCase(MoriLintCase):

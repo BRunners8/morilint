@@ -1,12 +1,12 @@
 from dataclasses import dataclass
 
-from src.mori_lint.domain.constants import REQUIRED_KEYWORDS, HEARTS
+from ...domain.constants import REQUIRED_KEYWORDS, HEARTS
 
 
 @dataclass
 class LintConfig:
-    message_length: int = 79
-    req_keywords: tuple[str] = REQUIRED_KEYWORDS
+    message_length: int = 30
+    req_keywords: list[str] = REQUIRED_KEYWORDS
     hearts: frozenset[str] = HEARTS
     min_hearts_count: int = 1
 

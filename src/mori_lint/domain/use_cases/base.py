@@ -1,6 +1,6 @@
 from abc import ABC
 
-from src.mori_lint.domain.interfaces.lint_config import ILintConfig
+from ..interfaces.lint_config import ILintConfig
 
 
 class MoriLintCase(ABC):

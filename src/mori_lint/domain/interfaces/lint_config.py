@@ -1,9 +1,9 @@
-from typing import Protocol, Tuple, FrozenSet
+from typing import Protocol, List, FrozenSet
 
 
 class ILintConfig(Protocol):
     message_length: int
-    req_keywords: Tuple[str]
+    req_keywords: List[str]
     hearts: FrozenSet[str]
     min_hearts_count: int
     # для выполнения только определённых проверок

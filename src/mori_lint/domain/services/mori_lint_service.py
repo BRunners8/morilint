@@ -1,10 +1,10 @@
 import string
 from typing import TypeVar, List, Any
 
-from src.mori_lint.domain.dto import LintReportDTO
-from src.mori_lint.domain.exceptions import MoriLintException
-from src.mori_lint.domain.interfaces.lint_config import ILintConfig
-from src.mori_lint.domain.use_cases import (
+from ..dto import LintReportDTO
+from ..exceptions import MoriLintException
+from ..interfaces.lint_config import ILintConfig
+from ..use_cases import (
     ValidateHeartsIncludeCase,
     ValidateLengthCase,
     ValidateRequiredKeywordsCase,
@@ -28,7 +28,6 @@ class MoriLintService:
         :return: Отчёт с данными о том, сколько всего
             было запущено проверок, сколько успешно/неуспешно, детали не прошедших проверок
         """
-
         clean_message: str = self.clear_message(message)
         lint_checks_cases: List[List[T | Any]] = []
 

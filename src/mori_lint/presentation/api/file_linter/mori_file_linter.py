@@ -4,19 +4,19 @@ from pathlib import Path
 from rich.table import Table
 from rich.console import Console
 
-from src.mori_lint.infrastructure.lint_config.config import LintConfig
-from src.mori_lint.presentation.api.base.mori_linter import MoriLinter
-from src.mori_lint.presentation.responses.lint_file_response import LintFilesResponse, LintFileData
-from src.mori_lint.presentation.responses.lint_response import LintResponse
+from ....domain.constants import MORIFILE
+from ....infrastructure.lint_config.config import LintConfig
+from ....presentation.api.base.mori_linter import MoriLinter
+from ....presentation.responses.lint_file_response import LintFilesResponse, LintFileData
+from ....presentation.responses.lint_response import LintResponse
 
 logger = logging.getLogger("__mori__")
 
 
 class MoriFileLinter:
-    def __init__(self, directory: str, config: LintConfig = None) -> None:
+    def __init__(self, config: LintConfig = None) -> None:
         self.__linter = MoriLinter(config=config)
-        self.__parse_dir = directory
-        self.__file_ext = "*.mori"
+        self.__file_ext = MORIFILE
         self.__console = Console()
 
     @staticmethod
@@ -24,17 +24,19 @@ class MoriFileLinter:
         with open(filepath, 'r', encoding='utf-8') as f:
             return f.read()
 
-    def lint(self) -> LintFilesResponse:
+    def lint(self, directory: str, print_lint_result: bool = True) -> LintFilesResponse:
         try:
-            self.print_report_to_console(self.lint_files_from_dir())
-            return self.lint_files_from_dir()
+            files_lint_result: LintFilesResponse = self.lint_files_from_dir(directory)
+            if print_lint_result:
+                self.print_report_to_console(files_lint_result)
+            return files_lint_result
         except Exception as e:
             logger.error(f"Во время проверки файлов произошла неизвестная ошибка: {e}")
             raise e
 
-    def lint_files_from_dir(self) -> LintFilesResponse:
+    def lint_files_from_dir(self, directory: str) -> LintFilesResponse:
         files_lint_result: list[LintFileData] = []
-        directory = Path(self.__parse_dir)
+        directory = Path(directory)
         mori_files = directory.glob(self.__file_ext)
         total_files_checked: int = 0
         checked_filenames: list[str] = []

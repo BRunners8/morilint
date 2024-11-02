@@ -1,11 +1,11 @@
 from dataclasses import dataclass
 
-from src.mori_lint.domain.exceptions.base import MoriLintException
+from ..exceptions.base import MoriLintException
 
 
 @dataclass
 class MessageRequiredKeywordMissingError(MoriLintException):
-    keywords: tuple[str]
+    keywords: list[str]
 
     @property
     def message(self) -> str:
