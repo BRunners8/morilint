@@ -1,4 +1,4 @@
-from src.mori_lint.presentation.responses.lint_response import LintResponse
+from src.morilint.presentation.responses.lint_response import LintResponse
 
 
 class TestMoriLinter:

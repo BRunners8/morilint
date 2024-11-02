@@ -2,7 +2,7 @@ from dataclasses import FrozenInstanceError
 
 import pytest
 
-from src.mori_lint.domain.dto import LintReportDTO
+from src.morilint.domain.dto import LintReportDTO
 
 
 class TestLintReportDTO:

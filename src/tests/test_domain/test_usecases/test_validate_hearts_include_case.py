@@ -1,6 +1,6 @@
 import pytest
 
-from src.mori_lint.domain.exceptions import MessageHearthMissingError
+from src.morilint.domain.exceptions import MessageHearthMissingError
 
 
 class TestValidateHeartsIncludeCase:

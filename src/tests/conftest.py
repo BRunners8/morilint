@@ -9,15 +9,15 @@ from src.tests.msg_fixtures import (
     msg_hearts_not_enough
 )
 
-from src.mori_lint.domain.use_cases import (
+from src.morilint.domain.use_cases import (
     ValidateHeartsIncludeCase,
     ValidateLengthCase,
     ValidateRequiredKeywordsCase
 )
 
 
-from src.mori_lint.infrastructure.lint_config.config import LintConfig
-from src.mori_lint.presentation.api.base.mori_linter import MoriLinter
+from src.morilint.infrastructure.lint_config.config import LintConfig
+from src.morilint.presentation.api.base.mori_linter import MoriLinter
 
 
 @pytest.fixture

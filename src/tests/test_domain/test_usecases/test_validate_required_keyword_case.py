@@ -1,6 +1,6 @@
 import pytest
 
-from src.mori_lint.domain.exceptions import MessageRequiredKeywordMissingError
+from src.morilint.domain.exceptions import MessageRequiredKeywordMissingError
 
 
 class TestValidateRequiredKeywordsCase:

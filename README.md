@@ -52,8 +52,8 @@ M🌚ri Message Linter разработан в связи с нескольки�
 ### Lint message
 Для проверки сообщения нужно использовать класс `MoriLinter`
 ```python3
-from mori_lint import MoriLinter
-from mori_lint.typing import LintResponse
+from morilint import MoriLinter
+from morilint.typing import LintResponse
 
 
 # Создаем экземпляр линтера
@@ -86,8 +86,8 @@ print(lint_result)
 при создании экземпляра класса MoriLinter.
 
 ```python3
-from mori_lint import MoriLinter, LintConfig
-from mori_lint.typing import LintResponse
+from morilint import MoriLinter, LintConfig
+from morilint.typing import LintResponse
 
 
 config = LintConfig(

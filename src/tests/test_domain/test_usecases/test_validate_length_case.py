@@ -1,6 +1,6 @@
 import pytest
 
-from src.mori_lint.domain.exceptions import MessageTooShortError
+from src.morilint.domain.exceptions import MessageTooShortError
 
 
 class TestValidateLengthCase:

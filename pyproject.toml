@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "morilint"
-version = "0.1.5"
+version = "0.1.7"
 description = "Мощный, либеральный, классный - Проверит сообщения, скажет, что не так"
 requires-python = ">=3.12"
 classifiers = [
@@ -24,7 +24,7 @@ authors = [
 dependencies = ['exceptiongroup>=1.1.3; python_version<"3.12"', 'rich<=13.9.3']
 
 [project.scripts]
-morilint = "mori_lint.main:main"
+morilint = "morilint.main:main"
 
 [tool.setuptools]
 include-package-data = true
