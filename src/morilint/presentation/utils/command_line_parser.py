@@ -19,7 +19,7 @@ class CommandLineParser:
         parser.add_argument(
             '--message_length',
             type=int,
-            default=79,
+            default=34,
             help="Максимальная длина сообщения"
         )
         parser.add_argument(

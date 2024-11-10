@@ -5,7 +5,7 @@ from ...domain.constants import REQUIRED_KEYWORDS, HEARTS
 
 @dataclass
 class LintConfig:
-    message_length: int = 30
+    message_length: int = 34
     req_keywords: list[str] = REQUIRED_KEYWORDS
     hearts: frozenset[str] = HEARTS
     min_hearts_count: int = 1
